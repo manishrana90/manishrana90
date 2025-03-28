@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">ClubOsg</string>
+    <string name="title_activity_main">ClubOsg</string>
+    <string name="package_name">com.clubosg</string>
+    <string name="custom_url_scheme">com.clubosg</string>
+</resources>
