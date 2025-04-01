@@ -1,0 +1,16 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    securerandom (0.3.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  securerandom (< 3.1.0)
+
+RUBY VERSION
+   ruby 2.7.5p203
+
+BUNDLED WITH
+   2.1.4

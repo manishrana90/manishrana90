@@ -1,0 +1,6 @@
+{
+  "appId": "com.clubosg",
+  "appName": "ClubOsg",
+  "webDir": "build",
+  "bundledWebRuntime": false
+}

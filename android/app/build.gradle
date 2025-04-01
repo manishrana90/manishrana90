@@ -35,17 +35,27 @@ dependencies {
     implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
     implementation "androidx.coordinatorlayout:coordinatorlayout:$androidxCoordinatorLayoutVersion"
     implementation "androidx.core:core-splashscreen:$coreSplashScreenVersion"
-    implementation project(':capacitor-android')
+   // implementation project(':capacitor-android')
     testImplementation "junit:junit:$junitVersion"
     androidTestImplementation "androidx.test.ext:junit:$androidxJunitVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$androidxEspressoCoreVersion"
-    implementation project(':capacitor-cordova-android-plugins')
+   // implementation project(':capacitor-cordova-android-plugins')
+  //implementation project(':react-native-screens')
+    // 'com.getcapacitor:capacitor-android:4.0.0' // Ensure this is included
+    //implementation 'com.google.android.material:material:1.cd9.0'
+  // implementation 'com.getcapacitor:capacitor-android:4.0.0'
+  implementation 'androidx.appcompat:appcompat:1.6.1'
+
+
+  implementation 'com.getcapacitor:capacitor-android:7.2.0'
+
 }
 
-apply from: 'capacitor.build.gradle'
+//apply from: 'capacitor.build.gradle'
 
-try {
-    def servicesJSON = file('google-services.json')
+try 
+{
+  //  def servicesJSON = file('google-services.json')
     if (servicesJSON.text) {
         apply plugin: 'com.google.gms.google-services'
     }
