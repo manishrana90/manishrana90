@@ -1,0 +1,5 @@
+"appflow": {
+  "appId": "be876df6",
+  "channel": "Production",
+  "updateMethod": "background"
+}
