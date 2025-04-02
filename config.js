@@ -22,7 +22,7 @@ export const Config = {
   WebLink: "https://clubprt.com",
   isFixedDeposit: true,
   version: 4.3,
-  showVersion: 7.9,
+  showVersion: 7.2,
   logoHeight: 42,
   logoWidth: 117,
   casinoOrderId: '9601',
