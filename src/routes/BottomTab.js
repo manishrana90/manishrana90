@@ -42,6 +42,10 @@ import IdDepositScreen from "../screen/IDs/IDInner/IdDepositScreen";
 import CasinoAura from "../screen/CasinoAura/CasinoAura";
 import BallByBall from "../screen/BallByBall/BallByBall";
 import Aviator from "../screen/Aviator/Aviator";
+<<<<<<< HEAD
+=======
+import DiamondTable from "../screen/DiamondTable/DiamondTable";
+>>>>>>> origin/main
 import Terms from "../screen/Terms/Terms";
 
 const Bottom = createBottomTabNavigator();
@@ -327,6 +331,10 @@ export default function BottomTab() {
             title: "Aviator",
           }}
         />
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/main
         <Bottom.Screen
           name="LiveGame"
           component={LiveGame}
@@ -577,6 +585,17 @@ export default function BottomTab() {
             title: "Terms",
           }}
         />
+<<<<<<< HEAD
+=======
+        <Bottom.Screen
+          name="DiamondTable"
+          component={DiamondTable}
+          options={{
+            tabBarButton: (props) => null,
+            title: "DiamondTable",
+          }}
+        />
+>>>>>>> origin/main
       </Bottom.Navigator>
 
       {modalVisible && (

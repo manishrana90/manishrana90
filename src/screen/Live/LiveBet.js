@@ -89,8 +89,16 @@ const LiveBet = props => {
 
   const {eventId, eventTypeId} = props.route.params;
   const authCtx = useContext(AuthContext);
+<<<<<<< HEAD
   const isFocused = useIsFocused();
   const [betType, setBetType] = useState(betDataType?.betModalType);
+=======
+
+  const isFocused = useIsFocused();
+  const [betType, setBetType] = useState(betDataType?.betModalType);
+  const [diamondLimitStatus, setDiamondLimitStatus] = useState({matchodds: false, bookmaker: false, session: false});
+  const [oddslimit, setoddLimit] = useState('');
+>>>>>>> origin/main
 
   useEffect(() => {
     if (authCtx.token === null || authCtx.token === undefined) {
@@ -152,9 +160,21 @@ const LiveBet = props => {
 
   useEffect(() => {
     const handleEventPulse = (...args) => {
+<<<<<<< HEAD
       const data = args[0];
       // const matchOddsData = data.find(item => item.marketType === 'MATCH_ODDS');
 
+=======
+      
+      const data = args[0];
+     //console.log(data);
+      
+      //  const matchoddlimit = data.find(item => item.marketType === 'MATCH_ODDS');
+      //  setoddLimit(matchoddlimit[0]);
+
+      //  const fancylimt = data.find(item => item.marketType === 'Special');
+      //  const bookmakerlimit = data.find(item => item.marketType === 'TO Win Toss');
+>>>>>>> origin/main
       dispatch({
         type: 'ALLDATA',
         payload: data,
@@ -402,7 +422,13 @@ const LiveBet = props => {
         };
 
         const response = await GetUserSetting(data);
+<<<<<<< HEAD
         if (response?.success == true) {
+=======
+       
+        if (response?.success == true) {
+          //console.log(response?.response?.data);
+>>>>>>> origin/main
           dispatch({
             type:
               eventTypeId == '4'
@@ -420,6 +446,16 @@ const LiveBet = props => {
             type: 'SESSIONTIME',
             payload: parseInt(response?.response?.data?.sessionDelay),
           });
+<<<<<<< HEAD
+=======
+
+          setDiamondLimitStatus({
+            matchodds: response?.response?.data?.diamondLimit, 
+            bookmaker: response?.response?.data?.diamondbLimit, 
+            session: response?.response?.data?.diamondfLimit
+          })
+         
+>>>>>>> origin/main
           dispatch({
             type: 'LIIMIT',
             payload: {
@@ -886,11 +922,19 @@ const LiveBet = props => {
               return 0;
             })
             .map(a => {
+<<<<<<< HEAD
               // console.log('a: ', a)
               return (
                 <View key={a._id}>
                   {a.marketType != 'SESSION' &&
                     a.marketTypeStatus != 0 &&
+=======
+
+              return (
+                <View key={a._id} >
+                  {a.marketType != 'SESSION' &&
+                    // a.marketTypeStatus != 0 &&
+>>>>>>> origin/main
                     marketsData[0]?.competitionName != 'Others' &&
                     !!visibility[a.marketType] && (
                       <View style={styles.bettingCardView}>
@@ -953,6 +997,7 @@ const LiveBet = props => {
                                 textAlign: 'right',
                               },
                             ]}>
+<<<<<<< HEAD
                             Min :{' '}
                             {a?.marketName === 'Match Odds'
                               ? limit.min || 'N/A'
@@ -961,11 +1006,63 @@ const LiveBet = props => {
                               : 'N/A'}
                             {'  '}
                             Max:{' '}
+=======
+                            {/* Min :{' '} */}
+                            {/* {(a?.marketName === 'Match Odds')?
+                              (limitStatus?.matchodds)?
+                                (a?.limit_peroirty)?
+                                  a?.minlimit
+                                  :
+                                  a?.bminlimit
+                                :
+                                limit.min || 'N/A'
+                              :
+                              (a?.marketName === 'Bookmaker')?
+                                (limitStatus?.bookmaker)?
+                                  (a?.limit_peroirty)?
+                                    a?.minlimit
+                                    :
+                                    a?.bminlimit
+                                  :
+                                  bookmakerLimit.min || 'N/A'
+                                :
+                                ''
+                            } */}
+                            {(a?.limit_peroirty)?
+                              `Min: ${a?.minlimit}  Max: ${a?.maxlimit}`
+                              :
+                              (a?.marketName === 'Match Odds')?
+                                (diamondLimitStatus?.matchodds)?
+                                  `Min: ${a?.bminlimit} Max: ${a?.bmaxlimit}`
+                                  :
+                                  `Min: ${limit.min || 'N/A'}  Max: ${limit.max || 'N/A'}`
+                                :
+                                (a?.marketName === 'Bookmaker' || a?.marketName === 'TO Win Toss')?
+                                  (diamondLimitStatus?.bookmaker)?
+                                    `Min: ${a?.bminlimit} Max: ${a?.bmaxlimit}`
+                                    :
+                                    `Min: ${bookmakerLimit.min || 'N/A'}  Max: ${bookmakerLimit.max || 'N/A'}`
+                                :
+                                'N/A'
+                            }
+                            {/* {a?.marketName === 'Match Odds'
+                              ? limit.min || 'N/A'
+                              : a?.marketName === 'Bookmaker'
+                              ? bookmakerLimit.min || 'N/A'
+                              : 'N/A'} */}
+                            {/* {'  '}
+                            Max:{' '}
+                            
+>>>>>>> origin/main
                             {a?.marketName === 'Match Odds'
                               ? limit.max || 'N/A'
                               : a?.marketName === 'Bookmaker'
                               ? bookmakerLimit.max || 'N/A'
+<<<<<<< HEAD
                               : 'N/A'}
+=======
+                              : 'N/A'} */}
+>>>>>>> origin/main
                           </Text>
                         </View>
 
@@ -1001,9 +1098,15 @@ const LiveBet = props => {
                       styles.matchCountryText,
                       {color: '#fff', fontSize: 10},
                     ]}>
+<<<<<<< HEAD
                     Min : {sessionLimit?.min || 'N/A'}
                     {'  '}
                     Max: {sessionLimit?.max || 'N/A'}
+=======
+                    {/* Min : {sessionLimit?.min || 'N/A'}
+                    {'  '}
+                    Max: {sessionLimit?.max || 'N/A'} */}
+>>>>>>> origin/main
                   </Text>
                 </View>
                 {allData.map(item => {
@@ -1032,6 +1135,17 @@ const LiveBet = props => {
                           sessionBetModalOpen={market =>
                             sessionBetModalOpen(market)
                           }
+<<<<<<< HEAD
+=======
+                          limit={(item?.limit_peroirty)?
+                            {min: item?.minlimit || 'N/A', max: item?.maxlimit || 'N/A'}
+                            :
+                            (diamondLimitStatus?.session)?
+                            {min: item?.bminlimit || 'N/A', max: item?.bmaxlimit || 'N/A'}
+                            :
+                            {min: sessionLimit?.min || 'N/A', max: sessionLimit?.max || 'N/A'}
+                          }
+>>>>>>> origin/main
                         />
                       )}
                     </View>
@@ -1236,6 +1350,10 @@ const styles = StyleSheet.create({
     height: 200,
     position: 'absolute',
     top: 0,
+<<<<<<< HEAD
+=======
+    
+>>>>>>> origin/main
   },
   cashoutButton: {
     height: 30,

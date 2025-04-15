@@ -50,7 +50,11 @@ export default RenderInPlaySports = (props) => {
   return (
     <>
       {/* {(props.item?.marketBook?.inplay != false || startdate < new Date()) && ( */}
+<<<<<<< HEAD
       {(props.item?.marketBook?.inplay != false) && (
+=======
+      {(props.item?.marketBook?.inplay == true)? (
+>>>>>>> origin/main
         <TouchableOpacity
           style={styles.gameInnerView}
           onPress={() => {
@@ -208,7 +212,13 @@ export default RenderInPlaySports = (props) => {
             setModalVisible={setUpdateApkModal}
           />
         </TouchableOpacity>
+<<<<<<< HEAD
       )}
+=======
+      )
+    :
+    null}
+>>>>>>> origin/main
     </>
   );
 };

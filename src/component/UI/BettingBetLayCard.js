@@ -70,6 +70,10 @@ const BettingBetLayCard = (props) => {
                 ).toFixed(2)}
               </Text>
             </TouchableOpacity>
+<<<<<<< HEAD
+=======
+            <Text style={styles.limitStatus}>{`Min: ${props?.limit?.min} Max: ${props?.limit?.max}`}</Text>
+>>>>>>> origin/main
           </View>
           <View style={styles.betSelectView}>
             <TouchableOpacity
@@ -146,7 +150,11 @@ const styles = StyleSheet.create({
   optionBet: {
     flex: 1,
     flexDirection: "row",
+<<<<<<< HEAD
     padding: 10,
+=======
+    padding: 5,
+>>>>>>> origin/main
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#E8F7FE",
@@ -155,8 +163,13 @@ const styles = StyleSheet.create({
     borderColor: "#64B3E2",
   },
   optionText: {
+<<<<<<< HEAD
     fontSize: 13,
     fontWeight: "700",
+=======
+    fontSize: 11,
+    fontWeight: "500",
+>>>>>>> origin/main
     color: "#096caa",
   },
   betSelectView: {
@@ -217,6 +230,16 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "bold",
   },
+<<<<<<< HEAD
+=======
+  limitStatus: {
+    fontSize: 8,
+    position: 'absolute',
+    bottom: 0,
+    left: 12,
+     color:'#000'
+  }
+>>>>>>> origin/main
 });
 
 export default memo(BettingBetLayCard);

@@ -10,17 +10,29 @@ import {
   TouchableOpacity,
 } from "react-native";
 import Toast from "react-native-toast-message";
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/main
 import { AuthContext } from "../../../../store/auth-context";
 import { Socket } from "../../../../util/socket";
 
 const SettingCustom = (props) => {
   const authCtx = useContext(AuthContext);
+<<<<<<< HEAD
 
   const [password, setPassword] = useState("");
   const [userName, setUserName] = useState("");
   const [loading, setLoading] = useState(false);
 
+=======
+const[currentpassword, setCurrentPassword] = useState("");
+  const [password, setPassword] = useState("");
+  const[confirmpassword, setConpassowrd]= useState("");
+  const [userName, setUserName] = useState("");
+  const [loading, setLoading] = useState(false);
+  // const [secureText, setSecureText] = useState(true);
+>>>>>>> origin/main
   useEffect(() => {
     if (authCtx.token === null || authCtx.token === undefined) {
       props.navigation.navigate("Home");
@@ -47,9 +59,15 @@ const SettingCustom = (props) => {
         });
       }
     };
+<<<<<<< HEAD
     Socket.on("update-password-success", updateSuccess);
 
     Socket.on("update-password-error", updateSuccess);
+=======
+    Socket.on("password-changed-success", updateSuccess);
+
+    Socket.on("password-changed-error", updateSuccess);
+>>>>>>> origin/main
 
     return () => {
       // Socket.off("update-password-success", updateSuccess);
@@ -113,8 +131,14 @@ const SettingCustom = (props) => {
   };
 
   async function submitHandler() {
+<<<<<<< HEAD
     let token = JSON.parse(authCtx.token);
     let userdata = {
+=======
+    if(password===confirmpassword){
+    let token = JSON.parse(authCtx.token);
+    const userdata = {
+>>>>>>> origin/main
       user: {
         _id: token._id,
         key: token.key,
@@ -124,12 +148,42 @@ const SettingCustom = (props) => {
           status: token.details.status,
         },
       },
+<<<<<<< HEAD
       password: password,
       targetUser: "",
     };
     console.log("userdata", userdata);
     setLoading(true);
     Socket.emit("update-password", userdata);
+=======
+      
+        password: currentpassword,
+        npassword: password,
+        targetUser: '',
+       
+      }
+    console.log("userdata", userdata);
+    setLoading(true);
+  Socket.emit('password-changed', userdata);
+}
+else{
+  if (confirmpassword === "") {
+    Toast.show({
+      type: "error",
+      text1: "Confirm Password.😔",
+      text2: "Confirm Password cannot be empty.😔",
+    });
+  }
+  else{
+  Toast.show({
+    type: "error",
+    text1: "Match Password.",
+    text2: "Not Match Password. 😔",
+   
+  });
+}
+}
+>>>>>>> origin/main
   }
 
   return (
@@ -156,8 +210,13 @@ const SettingCustom = (props) => {
             editable={false}
             selectTextOnFocus={false}
           />
+<<<<<<< HEAD
         </View>
 
+=======
+          
+        </View>
+>>>>>>> origin/main
         <View style={styles.profileNameHolder}>
           <View style={styles.iconView}>
             <Image
@@ -169,6 +228,33 @@ const SettingCustom = (props) => {
           </View>
           <TextInput
             style={styles.textInputNameStyle}
+<<<<<<< HEAD
+=======
+            placeholder="current Password"
+            maxLength={50}
+            placeholderTextColor={"#9f9f9f"}
+            value={currentpassword}
+            onChangeText={(text) => {
+              setCurrentPassword(text);
+            }}
+            secureTextEntry
+          />
+          
+        </View>
+
+        <View style={styles.profileNameHolder}>
+          <View style={styles.iconView}>
+            <Image
+              source={require("../../../../assets/images/iconPNG/settingsIcon.png")}
+              resizeMode="contain"
+              style={styles.iconImg}
+              tintColor={"#DAA520"}
+            />
+          </View>
+          
+          <TextInput
+            style={styles.textInputNameStyle}
+>>>>>>> origin/main
             placeholder="New Password"
             maxLength={50}
             placeholderTextColor={"#9f9f9f"}
@@ -179,6 +265,31 @@ const SettingCustom = (props) => {
             secureTextEntry
           />
         </View>
+<<<<<<< HEAD
+=======
+        <View style={styles.profileNameHolder}>
+          <View style={styles.iconView}>
+            <Image
+              source={require("../../../../assets/images/iconPNG/settingsIcon.png")}
+              resizeMode="contain"
+              style={styles.iconImg}
+              tintColor={"#DAA520"}
+            />
+          </View>
+          <TextInput
+            style={styles.textInputNameStyle}
+            placeholder="Confirm Password"
+            maxLength={50}
+            placeholderTextColor={"#9f9f9f"}
+            value={confirmpassword}
+            onChangeText={(text) => {
+              setConpassowrd(text);
+            }}
+            secureTextEntry
+          />
+          
+        </View>
+>>>>>>> origin/main
 
         <TouchableOpacity
           onPress={() => {

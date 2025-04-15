@@ -267,4 +267,12 @@ export async function cancelTransactionAPI(data) {
 export async function GetMarketsAPI(data) {
   const response = await axios.post(NEW_BACKEND_URL + 'get-market/', data);
   return response.data;
+<<<<<<< HEAD
 }
+=======
+}
+export async function GetlcasinoAPI(data) {
+  const response = await axios.post(NEW_BACKEND_URL + 'lobby-url/', data);
+  return response.data;
+}
+>>>>>>> origin/main

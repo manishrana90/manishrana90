@@ -88,7 +88,11 @@ const InPlay = () => {
       startdate.setMinutes(startdate.getMinutes() - durationInMinutes);
 
       // return item?.marketBook?.inplay !== false || startdate < new Date();
+<<<<<<< HEAD
       return item?.marketBook?.inplay !== false;
+=======
+      return item?.marketBook?.inplay == true;
+>>>>>>> origin/main
     });
 
     const dataLength = filteredData.length;
@@ -114,9 +118,12 @@ const InPlay = () => {
               <View style={styles.headTextCont}>
                 <Text style={styles.headText}>Cricket</Text>
               </View>
+<<<<<<< HEAD
               {/* <View style={styles.headallCont}>
                 <Text style={styles.headallText}>View All {cricket.length} games</Text>
               </View> */}
+=======
+>>>>>>> origin/main
             </View>
             <View style={styles.gameView}>
               <FlatList
@@ -153,9 +160,12 @@ const InPlay = () => {
               <View style={styles.headTextCont}>
                 <Text style={styles.headText}>Football</Text>
               </View>
+<<<<<<< HEAD
               {/* <View style={styles.headallCont}>
                 <Text style={styles.headallText}>View All {football.length} games</Text>
               </View> */}
+=======
+>>>>>>> origin/main
             </View>
             <View style={styles.gameView}>
               <FlatList
@@ -198,7 +208,11 @@ const InPlay = () => {
             </View>
             <View style={styles.gameView}>
               <FlatList
+<<<<<<< HEAD
                 data={tennis}
+=======
+                data={(Array.isArray(tennis))? tennis?.filter((item) => item?.marketBook?.inplay) : []}
+>>>>>>> origin/main
                 renderItem={({ item, index }) => (
                   <RenderInplaySports
                     item={item}
@@ -209,12 +223,21 @@ const InPlay = () => {
                     }}
                   />
                 )}
+<<<<<<< HEAD
                 keyExtractor={(item) => item._id}
+=======
+                keyExtractor={(item) => `${item?._id}_${item?.competitionId}`}
+>>>>>>> origin/main
               />
             </View>
           </View>
         </View>
       )}
+<<<<<<< HEAD
+=======
+      
+      
+>>>>>>> origin/main
 
       {modalVisible && (
         <LoginModal

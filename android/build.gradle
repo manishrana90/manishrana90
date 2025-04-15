@@ -1,6 +1,7 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
+<<<<<<< HEAD
     ext {
         buildToolsVersion = "31.0.0"
         minSdkVersion = 21
@@ -15,19 +16,29 @@ buildscript {
             ndkVersion = "21.4.7075529"
         }
     }
+=======
+    
+>>>>>>> origin/main
     repositories {
         google()
         mavenCentral()
     }
     dependencies {
+<<<<<<< HEAD
         classpath("com.android.tools.build:gradle:7.2.2")
         classpath("com.facebook.react:react-native-gradle-plugin")
         classpath("de.undercouch:gradle-download-task:5.0.1")
+=======
+       // classpath 'com.android.tools.build:gradle:8.2.1'
+        classpath 'com.google.gms:google-services:4.4.0'
+classpath 'com.android.tools.build:gradle:7.4.0'
+>>>>>>> origin/main
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
 }
 
+<<<<<<< HEAD
 allprojects {
     repositories {
         maven {
@@ -49,3 +60,19 @@ allprojects {
         maven { url 'https://www.jitpack.io' }
     }
 }
+=======
+apply from: "variables.gradle"
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        jcenter()  // Add if not already present
+        maven { url 'https://jitpack.io' }  // Ensure JitPack is included
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+>>>>>>> origin/main

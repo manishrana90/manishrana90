@@ -44,7 +44,12 @@ const SportsInplay = (props) => {
             </View>
             <View style={styles.gameView}>
               <FlatList
+<<<<<<< HEAD
                 data={props.data}
+=======
+                //data={props.data}
+                data={(Array.isArray(props.data))? props.data?.filter((item) => item?.marketBook?.inplay) : []}
+>>>>>>> origin/main
                 renderItem={({item, index}) => <RenderInplaySports item={item} setModalVisible={(value)=>{ props.setModalVisible(value);}}  />}
                 keyExtractor={item => item._id}
               />

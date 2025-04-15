@@ -28,6 +28,10 @@ import { AuthContext } from "../../store/auth-context";
 import WebView from "react-native-webview";
 import { useDispatch } from "react-redux";
 import HomeAviator from "./HomeInner/HomeAviator";
+<<<<<<< HEAD
+=======
+import HomeCasino from "./HomeInner/HomeCasino";
+>>>>>>> origin/main
 import { Socket } from "../../util/socket";
 import VersionModal from "../../component/UI/VersionModal";
 import { Config } from "../../../config";
@@ -240,7 +244,13 @@ const Home = (props) => {
         {(Config.isCasino && (!authCtx.token || !!authCtx?.availableEventTypes['c9']))&&
           <>
             <HomeHeader />
+<<<<<<< HEAD
             <HomeAviator />
+=======
+            <HomeCasino/>
+            <HomeAviator />
+
+>>>>>>> origin/main
           </>
         }
         
